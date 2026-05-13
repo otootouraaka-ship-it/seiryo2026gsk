@@ -16,15 +16,14 @@ st.set_page_config(
 
 import pandas as pd
 import matplotlib.pyplot as plt
-import base64
-
-import gspread
+import json
 
 from google.oauth2.service_account import Credentials
 
 from streamlit_autorefresh import st_autorefresh
 
 from background import set_bg_image
+from Google_Sheets import access_sheets
 
 # =====================================
 # 自動更新
@@ -45,53 +44,14 @@ set_bg_image("image.png")
 # Google Sheets
 # =====================================
 
-SCOPES = [
-    "https://www.googleapis.com/auth/spreadsheets"
-]
-
-creds = Credentials.from_service_account_info(
-    st.secrets["gcp_service_account"],
-    scopes=SCOPES
-)
-
-client = gspread.authorize(creds)
-
-SHEET_URL = "https://docs.google.com/spreadsheets/d/1TOUV7U2uJMHM2DO08_Dqhd_babEl-XESRXKIfIqpiYE/edit?resourcekey=&gid=1281103730#gid=1281103730"
-
-sheet = client.open_by_url(
-    SHEET_URL
-).sheet1
-
-data = sheet.get_all_records()
-
-df = pd.DataFrame(data)
+df = access_sheets()
 
 # =====================================
 # 問題設定
 # =====================================
 
-ANSWER_KEY = {
-    "Q1": {
-        "answer": "A",
-        "point": 5
-    },
-    "Q2": {
-        "answer": "C",
-        "point": 20
-    },
-    "Q3": {
-        "answer": "B",
-        "point": 10
-    },
-    "Q4": {
-        "answer": "D",
-        "point": 15
-    },
-    "Q5": {
-        "answer": "A",
-        "point": 50
-    }
-}
+with open('answer.json', 'r', encoding='utf-8') as f:
+    ANSWER_KEY = json.load(f)
 
 QUESTIONS = list(
     ANSWER_KEY.keys()
