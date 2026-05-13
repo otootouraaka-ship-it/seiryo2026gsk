@@ -98,31 +98,26 @@ def page4():
 # Navigation
 # =====================================
 
-Page1 = st.Page(
-    page1,
-    title="ホーム"
-)
-
-Page2 = st.Page(
-    page2,
-    title="統計データ"
-)
-
-Page3 = st.Page(
-    page3,
-    title="問題別データ"
-)
-
-Page4 = st.Page(
-    page4,
-    title="ランキング"
-)
-
 pg = st.navigation([
-    Page1,
-    Page2,
-    Page3,
-    Page4
+    st.Page(
+        page1,
+        title="ホーム"
+    ),
+
+    st.Page(
+        page2,
+        title="統計データ"
+    ),
+
+    st.Page(
+        page3,
+        title="問題別データ"
+    ),
+
+    st.Page(
+        page4,
+        title="ランキング"
+    )
 ])
 
 pg.run()
