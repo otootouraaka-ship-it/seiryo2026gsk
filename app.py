@@ -24,7 +24,7 @@ from google.oauth2.service_account import Credentials
 
 from streamlit_autorefresh import st_autorefresh
 
-from .background import set_bg_image
+from background import set_bg_image
 
 # =====================================
 # 自動更新
