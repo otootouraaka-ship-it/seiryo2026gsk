@@ -66,13 +66,15 @@ QUESTIONS = list(
 
 df, mean_score, std_score, max_score, accuracy = make_data(df, ANSWER_KEY)
 
+page1 = dashboard_page(df, mean_score, std_score, max_score, accuracy, ANSWER_KEY)
+
 # =====================================
 # Navigation
 # =====================================
 
 pg = st.navigation([
     st.Page(
-        dashboard_page(df, mean_score, std_score, max_score, accuracy, ANSWER_KEY),
+        page1,
         title="ランキング"
     ),
     st.Page(
