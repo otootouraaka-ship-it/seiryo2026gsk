@@ -1,7 +1,7 @@
 import base64
 import streamlit as st
 
-def set_bg_image(image_file):
+def setting(image_file):
 
     with open(image_file, "rb") as f:
         data = f.read()

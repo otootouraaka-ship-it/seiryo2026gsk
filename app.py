@@ -6,7 +6,7 @@ import streamlit as st
 
 from streamlit_autorefresh import st_autorefresh
 
-from background import set_bg_image
+from setting import setting
 from Google_Sheets import access_sheets
 from calc import make_data
 from main import main_page
@@ -34,10 +34,10 @@ st_autorefresh(
 )
 
 # =====================================
-# 背景
+# サイト設定
 # =====================================
 
-set_bg_image("image.png")
+setting("image.png")
 
 # =====================================
 # Google Sheets
