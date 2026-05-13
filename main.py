@@ -61,7 +61,7 @@ def main_page():
             use_container_width=True
         ):
 
-            st.switch_page("https://gsk-nijisanji-test-26.streamlit.app/page2")
+            st.switch_page("page2")
 
     # -------------------------
     # 問題別データ
