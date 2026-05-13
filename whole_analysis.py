@@ -34,79 +34,85 @@ def whole_analysis_page(df, mean_score, std_score, max_score, accuracy, ANSWER_K
         f"{accuracy:.1f}%"
     )
 
+    col5, col6 = st.columns(2)
+
     # =====================
     # 得点分布
     # =====================
 
-    st.subheader("得点分布")
+    with col5:
 
-    fig, ax = plt.subplots()
+        st.subheader("得点分布")
 
-    fig.patch.set_alpha(0)
+        fig, ax = plt.subplots()
 
-    ax.set_facecolor((0,0,0,0))
+        fig.patch.set_alpha(0)
 
-    ax.hist(
-        df["score"],
-        bins=range(max_score + 2),
-        alpha=0.3
-    )
+        ax.set_facecolor((0,0,0,0))
 
-    st.pyplot(fig)
+        ax.hist(
+            df["score"],
+            bins=range(max_score + 2),
+            alpha=0.3
+        )
+
+        st.pyplot(fig)
 
     # =====================
     # 正答率
     # =====================
 
-    st.subheader("問題別正答率")
+    with col6:
 
-    question_accuracy = {}
+        st.subheader("問題別正答率")
 
-    for q, setting in ANSWER_KEY.items():
+        question_accuracy = {}
 
-        ans = setting["answer"]
+        for q, setting in ANSWER_KEY.items():
 
-        correct = (
-            df[q]
-            .astype(str)
-            .str.strip()
-            == ans
-        ).sum()
+            ans = setting["answer"]
 
-        rate = correct / len(df) * 100
+            correct = (
+                df[q]
+                .astype(str)
+                .str.strip()
+                == ans
+            ).sum()
 
-        question_accuracy[q] = rate
+            rate = correct / len(df) * 100
 
-    qa_df = pd.DataFrame({
-        "Question": question_accuracy.keys(),
-        "Accuracy": question_accuracy.values()
-    })
+            question_accuracy[q] = rate
 
-    fig, ax = plt.subplots()
+        qa_df = pd.DataFrame({
+            "Question": question_accuracy.keys(),
+            "Accuracy": question_accuracy.values()
+        })
 
-    fig.patch.set_alpha(0)
+        fig, ax = plt.subplots()
 
-    ax.set_facecolor((0,0,0,0))
+        fig.patch.set_alpha(0)
 
-    bars = ax.bar(
-        qa_df["Question"],
-        qa_df["Accuracy"],
-        alpha=0.3
-    )
+        ax.set_facecolor((0,0,0,0))
 
-    ax.set_ylim(0, 100)
-
-    for bar in bars:
-
-        height = bar.get_height()
-
-        ax.text(
-            bar.get_x() + bar.get_width()/2,
-            height + 1,
-            f"{height:.1f}%",
-            ha='center'
+        bars = ax.bar(
+            qa_df["Question"],
+            qa_df["Accuracy"],
+            alpha=0.3
         )
 
-    st.pyplot(fig)
+        ax.set_ylim(0, 100)
+
+        for bar in bars:
+
+            height = bar.get_height()
+
+            ax.text(
+                bar.get_x() + bar.get_width()/2,
+                height + 1,
+                f"{height:.1f}%",
+                ha='center'
+            )
+
+        st.pyplot(fig)
 
     
