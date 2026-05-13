@@ -41,6 +41,9 @@ def main_page():
     # =========================
 
     st.subheader("ページ一覧")
+    st.markdown("""
+    左側のサイドバーから移動できます！
+    """)
 
     col1, col2 = st.columns(2)
 
@@ -56,15 +59,6 @@ def main_page():
             "平均点・標準偏差・正答率などを表示します。"
         )
 
-        if st.button(
-            "統計データを見る",
-            use_container_width=True
-        ):
-
-            st.markdown(
-                '<meta http-equiv="refresh" content="0;URL=https://gsk-nijisanji-test-26.streamlit.app/page2">',
-                unsafe_allow_html=True
-            )
 
     # -------------------------
     # 問題別データ
@@ -78,15 +72,6 @@ def main_page():
             "各問題の選択肢選択率を表示します。"
         )
 
-        if st.button(
-            "問題別データを見る",
-            use_container_width=True
-        ):
-
-            st.markdown(
-                '<meta http-equiv="refresh" content="0;URL=https://gsk-nijisanji-test-26.streamlit.app/page3">',
-                unsafe_allow_html=True
-            )
 
     st.write("")
 
@@ -104,15 +89,7 @@ def main_page():
             "ランキングを表示します。目指せ1位！！！"
         )
 
-        if st.button(
-            "ランキングを見る",
-            use_container_width=True
-        ):
 
-            st.markdown(
-                '<meta http-equiv="refresh" content="0;URL=https://gsk-nijisanji-test-26.streamlit.app/page4">',
-                unsafe_allow_html=True
-            )
 
     # -------------------------
     # おまけ
@@ -124,8 +101,4 @@ def main_page():
 
         st.write(
             "Streamlit + Google Sheets により動作しています。"
-        )
-
-        st.info(
-            "回答は約60秒ごとに自動更新されます。"
         )
