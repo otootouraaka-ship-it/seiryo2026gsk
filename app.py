@@ -1,4 +1,15 @@
 import streamlit as st
+import streamlit as st
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+import base64
+
+import gspread
+from google.oauth2.service_account import Credentials
+
+from streamlit_autorefresh import st_autorefresh
 
 # =========================
 # 最優先
@@ -9,20 +20,6 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
-
-# =========================
-# import
-# =========================
-
-import pandas as pd
-import matplotlib.pyplot as plt
-import base64
-
-import gspread
-
-from google.oauth2.service_account import Credentials
-
-from streamlit_autorefresh import st_autorefresh
 
 # =========================
 # 自動更新
