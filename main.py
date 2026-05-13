@@ -61,7 +61,7 @@ def main_page():
             use_container_width=True
         ):
 
-            st.switch_page("統計データ")
+            st.switch_page("https://gsk-nijisanji-test-26.streamlit.app/page2")
 
     # -------------------------
     # 問題別データ
@@ -80,7 +80,7 @@ def main_page():
             use_container_width=True
         ):
 
-            st.switch_page("問題別データ")
+            st.switch_page("https://gsk-nijisanji-test-26.streamlit.app/page3")
 
     st.write("")
 
@@ -103,7 +103,7 @@ def main_page():
             use_container_width=True
         ):
 
-            st.switch_page("ランキング")
+            st.switch_page("https://gsk-nijisanji-test-26.streamlit.app/page4")
 
     # -------------------------
     # おまけ
