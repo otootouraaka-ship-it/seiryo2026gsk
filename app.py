@@ -29,7 +29,7 @@ st.set_page_config(
 # =====================================
 
 st_autorefresh(
-    interval=5000,
+    interval=60000,
     key="refresh"
 )
 
