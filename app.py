@@ -75,7 +75,6 @@ pg = st.navigation([
         dashboard_page(df, mean_score, std_score, max_score, accuracy, ANSWER_KEY),
         title="ランキング"
     ),
-
     st.Page(
         question_analysis_page(QUESTIONS, df),
         title="問題分析"
