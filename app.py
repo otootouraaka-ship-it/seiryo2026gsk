@@ -1,24 +1,8 @@
-import streamlit as st
-
-# =====================================
-# 最優先
-# =====================================
-
-st.set_page_config(
-    page_title="げんしけんにじさんじ共通テスト2026 in 清陵祭",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
-
 # =====================================
 # import
 # =====================================
-
-import pandas as pd
-import matplotlib.pyplot as plt
 import json
-
-from google.oauth2.service_account import Credentials
+import streamlit as st
 
 from streamlit_autorefresh import st_autorefresh
 
@@ -27,6 +11,16 @@ from Google_Sheets import access_sheets
 from calc import make_data
 from main import dashboard_page
 from rate_question import question_analysis_page
+
+# =====================================
+# ページのコンフィグ設定
+# =====================================
+
+st.set_page_config(
+    page_title="げんしけんにじさんじ共通テスト2026 in 清陵祭",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
 # =====================================
 # 自動更新
