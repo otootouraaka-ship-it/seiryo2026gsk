@@ -99,22 +99,22 @@ def page4():
 # =====================================
 
 pages = {
-    "ホーム": st.Page(
+    "page1": st.Page(
         page1,
         title="ホーム"
     ),
 
-    "統計データ": st.Page(
+    "page2": st.Page(
         page2,
         title="統計データ"
     ),
 
-    "問題別データ": st.Page(
+    "page3": st.Page(
         page3,
         title="問題別データ"
     ),
 
-    "ランキング": st.Page(
+    "page4": st.Page(
         page4,
         title="ランキング"
     )
@@ -126,7 +126,7 @@ pages = {
 
 query_params = st.query_params
 
-default_page = "ホーム"
+default_page = "page1"
 
 if "page" in query_params:
 

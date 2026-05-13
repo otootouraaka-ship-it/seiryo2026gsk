@@ -57,7 +57,7 @@ def main_page():
             use_container_width=True
         ):
 
-            st.query_params["page"] = "統計データ"
+            st.query_params["page"] = "page2"
 
             st.rerun()
 
@@ -78,7 +78,7 @@ def main_page():
             use_container_width=True
         ):
 
-            st.query_params["page"] = "問題別データ"
+            st.query_params["page"] = "page3"
 
             st.rerun()
 
@@ -103,7 +103,7 @@ def main_page():
             use_container_width=True
         ):
 
-            st.query_params["page"] = "ランキング"
+            st.query_params["page"] = "page4"
 
             st.rerun()
 
