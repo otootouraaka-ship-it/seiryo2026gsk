@@ -9,8 +9,10 @@ from streamlit_autorefresh import st_autorefresh
 from background import set_bg_image
 from Google_Sheets import access_sheets
 from calc import make_data
-from main import dashboard_page
+from main import main_page
 from rate_question import question_analysis_page
+from whole_analysis import whole_analysis_page
+from ranking import ranking_page
 
 # =====================================
 # ページのコンフィグ設定
@@ -66,7 +68,7 @@ df, mean_score, std_score, max_score, accuracy = make_data(df, ANSWER_KEY)
 
 def page1():
 
-    dashboard_page(df, mean_score, std_score, max_score, accuracy, ANSWER_KEY)
+    main_page()
 
 # =====================================
 # ページ2
@@ -74,7 +76,23 @@ def page1():
 
 def page2():
 
+    whole_analysis_page(df, mean_score, std_score, max_score, accuracy, ANSWER_KEY)
+
+# =====================================
+# ページ3
+# =====================================
+
+def page3():
+
     question_analysis_page(QUESTIONS, df)
+
+# =====================================
+# ページ4
+# =====================================
+
+def page4():
+
+    ranking_page(df)
 
 # =====================================
 # Navigation
@@ -83,12 +101,22 @@ def page2():
 pg = st.navigation([
     st.Page(
         page1,
-        title="ランキング"
+        title="ホーム"
     ),
 
     st.Page(
         page2,
-        title="問題分析"
+        title="統計データ"
+    ),
+
+    st.Page(
+        page3,
+        title="問題別データ"
+    ),
+
+    st.Page(
+        page4,
+        title="ランキング"
     )
 ])
 
