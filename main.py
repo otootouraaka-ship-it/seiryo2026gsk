@@ -36,85 +36,96 @@ def main_page():
 
     st.divider()
 
+    # =========================
+    # 遷移ボタン
+    # =========================
+
     st.subheader("ページ一覧")
 
     col1, col2 = st.columns(2)
 
-    # =========================
-    # 統計
-    # =========================
+    # -------------------------
+    # 統計データ
+    # -------------------------
 
     with col1:
 
         st.markdown("### 📊 統計データ")
 
         st.write(
-            "平均点・標準偏差などを表示します。"
+            "平均点・標準偏差・正答率などを表示します。"
         )
 
         if st.button(
-            "統計データへ",
+            "統計データを見る",
             use_container_width=True
         ):
 
-            st.query_params["page"] = "page2"
+            st.markdown(
+                '<meta http-equiv="refresh" content="0;URL=https://gsk-nijisanji-test-26.streamlit.app/page2">',
+                unsafe_allow_html=True
+            )
 
-            st.rerun()
-
-    # =========================
-    # 問題別
-    # =========================
+    # -------------------------
+    # 問題別データ
+    # -------------------------
 
     with col2:
 
         st.markdown("### 📝 問題別データ")
 
         st.write(
-            "問題ごとの選択率を表示します。"
+            "各問題の選択肢選択率を表示します。"
         )
 
         if st.button(
-            "問題別データへ",
+            "問題別データを見る",
             use_container_width=True
         ):
 
-            st.query_params["page"] = "page3"
-
-            st.rerun()
+            st.markdown(
+                '<meta http-equiv="refresh" content="0;URL=https://gsk-nijisanji-test-26.streamlit.app/page3">',
+                unsafe_allow_html=True
+            )
 
     st.write("")
 
     col3, col4 = st.columns(2)
 
-    # =========================
+    # -------------------------
     # ランキング
-    # =========================
+    # -------------------------
 
     with col3:
 
         st.markdown("### 🏆 ランキング")
 
         st.write(
-            "ランキングと偏差値を表示します。"
+            "ランキングを表示します。目指せ1位！！！"
         )
 
         if st.button(
-            "ランキングへ",
+            "ランキングを見る",
             use_container_width=True
         ):
 
-            st.query_params["page"] = "page4"
+            st.markdown(
+                '<meta http-equiv="refresh" content="0;URL=https://gsk-nijisanji-test-26.streamlit.app/page4">',
+                unsafe_allow_html=True
+            )
 
-            st.rerun()
-
-    # =========================
-    # システム情報
-    # =========================
+    # -------------------------
+    # おまけ
+    # -------------------------
 
     with col4:
 
         st.markdown("### ℹ️ システム情報")
 
+        st.write(
+            "Streamlit + Google Sheets により動作しています。"
+        )
+
         st.info(
-            "データは60秒ごとに更新されます。"
+            "回答は約60秒ごとに自動更新されます。"
         )

@@ -98,49 +98,26 @@ def page4():
 # Navigation
 # =====================================
 
-pages = {
-    "page1": st.Page(
+pg = st.navigation([
+    st.Page(
         page1,
         title="ホーム"
     ),
 
-    "page2": st.Page(
+    st.Page(
         page2,
         title="統計データ"
     ),
 
-    "page3": st.Page(
+    st.Page(
         page3,
         title="問題別データ"
     ),
 
-    "page4": st.Page(
+    st.Page(
         page4,
         title="ランキング"
     )
-}
-
-# =====================================
-# URLパラメータ取得
-# =====================================
-
-query_params = st.query_params
-
-default_page = "page1"
-
-if "page" in query_params:
-
-    requested = query_params["page"]
-
-    if requested in pages:
-        default_page = requested
-
-# =====================================
-# Navigation実行
-# =====================================
-
-pg = st.navigation(
-    list(pages.values())
-)
+])
 
 pg.run()
