@@ -66,35 +66,41 @@ def question_analysis_page(QUESTIONS, df):
         + "%"
     )
 
-    st.dataframe(
-        display_df,
-        hide_index=True,
-        use_container_width=True
-    )
+    col4, col5 = st.columns(2)
 
-    fig, ax = plt.subplots()
+    with col4:
 
-    fig.patch.set_alpha(0)
-
-    ax.set_facecolor((0,0,0,0))
-
-    bars = ax.bar(
-        analysis_df["Choice"],
-        analysis_df["Percentage"],
-        alpha=0.3
-    )
-
-    ax.set_ylim(0, 100)
-
-    for bar in bars:
-
-        height = bar.get_height()
-
-        ax.text(
-            bar.get_x() + bar.get_width()/2,
-            height + 1,
-            f"{height:.1f}%",
-            ha='center'
+        st.dataframe(
+            display_df,
+            hide_index=True,
+            use_container_width=True
         )
 
-    st.pyplot(fig)
+    with col5:
+
+        fig, ax = plt.subplots()
+
+        fig.patch.set_alpha(0)
+
+        ax.set_facecolor((0,0,0,0))
+
+        bars = ax.bar(
+            analysis_df["Choice"],
+            analysis_df["Percentage"],
+            alpha=0.3
+        )
+
+        ax.set_ylim(0, 100)
+
+        for bar in bars:
+
+            height = bar.get_height()
+
+            ax.text(
+                bar.get_x() + bar.get_width()/2,
+                height + 1,
+                f"{height:.1f}%",
+                ha='center'
+            )
+
+        st.pyplot(fig)
