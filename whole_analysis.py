@@ -48,7 +48,7 @@ def whole_analysis_page(df, mean_score, std_score, max_score, accuracy, ANSWER_K
 
         fig.patch.set_alpha(0)
 
-        ax.set_facecolor((0,0,0,0.5))
+        ax.set_facecolor((1,1,1,0.5))
 
         ax.hist(
             df["score"],
@@ -92,7 +92,7 @@ def whole_analysis_page(df, mean_score, std_score, max_score, accuracy, ANSWER_K
 
         fig.patch.set_alpha(0)
 
-        ax.set_facecolor((0,0,0,0.5))
+        ax.set_facecolor((1,1,1,0.5))
 
         bars = ax.bar(
             qa_df["Question"],
