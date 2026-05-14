@@ -114,6 +114,8 @@ def whole_analysis_page(df, mean_score, std_score, max_score, accuracy, ANSWER_K
                 ha='center'
             )
 
+            ax.tick_params(labelbottom=False, labelleft=False, labelright=False, labeltop=False)
+
         st.pyplot(fig)
 
     
