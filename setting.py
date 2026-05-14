@@ -71,5 +71,3 @@ def bgm(bgm_file):
 def setting(image_file, bgm_file):
 
     backimg(image_file)
-    font()
-    bgm(bgm_file)
