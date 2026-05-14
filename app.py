@@ -101,6 +101,7 @@ def page4():
 
 def page5():
 
+    st.write("TEST")
     omake_page()
 
 # =====================================
@@ -124,7 +125,7 @@ pg = st.navigation([
     ),
 
     st.Page(
-        page5,
+        page4,
         title="ランキング"
     ),
 
