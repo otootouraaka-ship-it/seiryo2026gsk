@@ -48,12 +48,12 @@ def whole_analysis_page(df, mean_score, std_score, max_score, accuracy, ANSWER_K
 
         fig.patch.set_alpha(0)
 
-        ax.set_facecolor((0,0,0,0))
+        ax.set_facecolor((0,0,0,0.5))
 
         ax.hist(
             df["score"],
             bins=range(max_score + 2),
-            alpha=0.3
+            alpha=1
         )
 
         st.pyplot(fig)
@@ -92,12 +92,12 @@ def whole_analysis_page(df, mean_score, std_score, max_score, accuracy, ANSWER_K
 
         fig.patch.set_alpha(0)
 
-        ax.set_facecolor((0,0,0,0))
+        ax.set_facecolor((0,0,0,0.5))
 
         bars = ax.bar(
             qa_df["Question"],
             qa_df["Accuracy"],
-            alpha=0.3
+            alpha=1
         )
 
         ax.set_ylim(0, 100)
