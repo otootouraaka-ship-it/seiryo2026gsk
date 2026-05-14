@@ -124,10 +124,10 @@ pg = st.navigation([
     ),
 
     st.Page(
-        page4,
+        page5,
         title="ランキング"
     ),
-    
+
     st.Page(
         page5,
         title="おまけ"
