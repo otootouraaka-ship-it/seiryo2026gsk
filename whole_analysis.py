@@ -58,7 +58,7 @@ def whole_analysis_page(df, mean_score, std_score, max_score, accuracy, ANSWER_K
             
         )
 
-        ax.set_xticks(np.arange(0, 100, 1))
+        ax.set_yticks(np.arange(0, 100, 1))
 
         st.pyplot(fig)
 
