@@ -42,7 +42,7 @@ def font():
         /* 全体へ適用 */
         html, body, [class*="css"] {
 
-            font-family: 'Noto Sans JP', sans-serif;
+            font-family: 'Orbitron', sans-serif;
         }
 
         </style>
@@ -56,7 +56,7 @@ def bgm(bgm_file):
     b64 = base64.b64encode(data).decode()
 
     md = f"""
-    <audio autoplay loop>
+    <audio autoplay loop muted>
     <source src="data:audio/mp3;base64,{b64}" type="audio/mp3">
     </audio>
     """
