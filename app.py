@@ -67,7 +67,7 @@ df, mean_score, std_score, max_score, accuracy = make_data(df, ANSWER_KEY)
 # ページ1
 # =====================================
 
-def page1():
+def main():
 
     main_page()
 
@@ -75,7 +75,7 @@ def page1():
 # ページ2
 # =====================================
 
-def page2():
+def whole_analysis():
 
     whole_analysis_page(df, mean_score, std_score, max_score, accuracy, ANSWER_KEY)
 
@@ -83,7 +83,7 @@ def page2():
 # ページ3
 # =====================================
 
-def page3():
+def question_analysis():
 
     question_analysis_page(QUESTIONS, df)
 
@@ -91,7 +91,7 @@ def page3():
 # ページ4
 # =====================================
 
-def page4():
+def ranking():
 
     ranking_page(df)
 
@@ -99,7 +99,7 @@ def page4():
 # ページ5
 # =====================================
 
-def page5():
+def omake():
 
     st.write("TEST")
     # omake_page()
@@ -111,27 +111,27 @@ def page5():
 pages = [
 
     st.Page(
-        page1,
+        main,
         title="ホーム"
     ),
 
     st.Page(
-        page2,
+        whole_analysis,
         title="統計データ"
     ),
 
     st.Page(
-        page3,
+        question_analysis,
         title="問題別データ"
     ),
 
     st.Page(
-        page4,
+        ranking,
         title="ランキング"
     ),
 
     st.Page(
-        page5,
+        omake,
         title="おまけ"
     )
 ]
