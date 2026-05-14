@@ -53,7 +53,9 @@ def whole_analysis_page(df, mean_score, std_score, max_score, accuracy, ANSWER_K
         ax.hist(
             df["score"],
             bins=range(max_score + 2),
+            edgecolor='white',
             alpha=1
+            
         )
 
         st.pyplot(fig)
