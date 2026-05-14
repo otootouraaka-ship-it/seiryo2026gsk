@@ -101,8 +101,7 @@ def ranking():
 
 def omake():
 
-    st.write("TEST")
-    # omake_page()
+    omake_page()
 
 # =====================================
 # Navigation
