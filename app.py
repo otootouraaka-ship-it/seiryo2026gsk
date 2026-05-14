@@ -102,7 +102,7 @@ def page4():
 def page5():
 
     st.write("TEST")
-    omake_page()
+    # omake_page()
 
 # =====================================
 # Navigation
