@@ -51,14 +51,14 @@ def whole_analysis_page(df, mean_score, std_score, max_score, accuracy, ANSWER_K
 
         ax.set_facecolor((1,1,1,0.5))
 
+        ax.set_yticks(np.arange(0, 100, 1))
+
         ax.hist(
             df["score"],
             bins=range(max_score + 2),
             alpha=1
             
         )
-
-        ax.set_yticks(np.arange(0, 100, 1))
 
         st.pyplot(fig)
 
