@@ -13,8 +13,8 @@ def backimg(image_file):
     .stApp {{
         background-image:
             linear-gradient(
-                rgba(0,0,0,0.9),
-                rgba(0,0,0,0.9)
+                rgba(1,1,1,0.9),
+                rgba(1,1,1,0.9)
             ),
             url("data:image/png;base64,{encoded}");
 
