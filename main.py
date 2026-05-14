@@ -97,8 +97,8 @@ def main_page():
 
     with col4:
 
-        st.markdown("### ℹ️ システム情報")
+        st.markdown("### ℹ️ 没問題一覧")
 
         st.write(
-            "Streamlit + Google Sheets により動作しています。"
+            "会員から集めたものの、惜しくも採用されなかった問題を載せてます"
         )
