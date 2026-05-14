@@ -18,7 +18,7 @@ def omake_page():
     # =====================================
 
     with open(
-        "/workspaces/seiryo2026gsk/dropped_questions.json",
+        "dropped_questions.json",
         "r",
         encoding="utf-8"
     ) as f:
