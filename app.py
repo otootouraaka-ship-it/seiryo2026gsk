@@ -13,7 +13,7 @@ from main import main_page
 from rate_question import question_analysis_page
 from whole_analysis import whole_analysis_page
 from ranking import ranking_page
-from omake import omake_page
+from omakepage import omake_page
 
 # =====================================
 # ページのコンフィグ設定
