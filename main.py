@@ -97,7 +97,7 @@ def main_page():
 
     with col4:
 
-        st.markdown("### ℹ️ 没問題一覧")
+        st.markdown("### ℹ️ おまけ")
 
         st.write(
             "会員から集めたものの、惜しくも採用されなかった問題を載せてます"
