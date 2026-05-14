@@ -1,8 +1,7 @@
 import base64
 import streamlit as st
 
-def setting(image_file, bgm_file):
-
+def backimg(image_file):
     with open(image_file, "rb") as f:
         data = f.read()
 
@@ -28,11 +27,17 @@ def setting(image_file, bgm_file):
     </style>
     """
 
+    st.markdown(
+        page_bg_img,
+        unsafe_allow_html=True
+    )
+
+def font():
     st.markdown("""
         <style>
 
         /* Google Fonts 読み込み */
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
         /* 全体へ適用 */
         html, body, [class*="css"] {
@@ -42,6 +47,8 @@ def setting(image_file, bgm_file):
 
         </style>
         """, unsafe_allow_html=True)
+
+def bgm(bgm_file):
 
     with open(bgm_file, "rb") as f:
         data = f.read()
@@ -59,7 +66,10 @@ def setting(image_file, bgm_file):
         unsafe_allow_html=True
     )
 
-    st.markdown(
-        page_bg_img,
-        unsafe_allow_html=True
-    )
+
+
+def setting(image_file, bgm_file):
+
+    backimg(image_file)
+    font()
+    bgm(bgm_file)
