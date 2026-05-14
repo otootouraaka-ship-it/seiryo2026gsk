@@ -46,7 +46,7 @@ def whole_analysis_page(df, mean_score, std_score, max_score, accuracy, ANSWER_K
 
         fig, ax = plt.subplots()
 
-        fig.patch.set_alpha(0)
+        fig.patch.set_alpha(0.7)
 
         ax.set_facecolor((1,1,1,0.5))
 
@@ -91,7 +91,7 @@ def whole_analysis_page(df, mean_score, std_score, max_score, accuracy, ANSWER_K
 
         fig, ax = plt.subplots()
 
-        fig.patch.set_alpha(0)
+        fig.patch.set_alpha(0.7)
 
         ax.set_facecolor((1,1,1,0.5))
 
