@@ -20,9 +20,9 @@ from omakepage import omake_page
 # =====================================
 
 st.set_page_config(
-    page_title="げんしけんにじさんじ共通テスト2026 in 清陵祭",
-    layout="wide",
-    initial_sidebar_state="expanded"
+    page_title="げんしけんにじさんじ共通テスト2026 in 清陵祭", # リンク先として表示される名前
+    layout="wide", # 画面いっぱいにサイト内容を表示する
+    initial_sidebar_state="expanded" # サイドバーを拡張して表示する
 )
 
 # =====================================
@@ -30,21 +30,21 @@ st.set_page_config(
 # =====================================
 
 st_autorefresh(
-    interval=60000,
-    key="refresh"
+    interval=60000, # 60000ms(60s, すなわち一分)間隔でデータを自動更新する
+    key="refresh" # 追加ではなくrefreshのみ
 )
 
 # =====================================
 # サイト設定
 # =====================================
 
-setting("image.png", "Morning_2.mp3")
+setting("image.png", "Morning_2.mp3") # サイトの背景とかフォントとかを設定している
 
 # =====================================
 # Google Sheets
 # =====================================
 
-df = access_sheets()
+df = access_sheets() # Google APIを用いてGoogle Spreadsheetのデータを持ってきている
 
 # =====================================
 # 問題設定
