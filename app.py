@@ -13,6 +13,7 @@ from main import main_page
 from rate_question import question_analysis_page
 from whole_analysis import whole_analysis_page
 from ranking import ranking_page
+from omake import omake_page
 
 # =====================================
 # ページのコンフィグ設定
@@ -37,7 +38,7 @@ st_autorefresh(
 # サイト設定
 # =====================================
 
-setting("image.png")
+setting("image.png", "Morning_2.mp3")
 
 # =====================================
 # Google Sheets
@@ -93,6 +94,14 @@ def page3():
 def page4():
 
     ranking_page(df)
+
+# =====================================
+# ページ5
+# =====================================
+
+def page5():
+
+    omake_page()
 
 # =====================================
 # Navigation

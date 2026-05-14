@@ -1,7 +1,7 @@
 import base64
 import streamlit as st
 
-def setting(image_file):
+def setting(image_file, bgm_file):
 
     with open(image_file, "rb") as f:
         data = f.read()
@@ -27,6 +27,37 @@ def setting(image_file):
 
     </style>
     """
+
+    st.markdown("""
+        <style>
+
+        /* Google Fonts 読み込み */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap');
+
+        /* 全体へ適用 */
+        html, body, [class*="css"] {
+
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        </style>
+        """, unsafe_allow_html=True)
+
+    with open(bgm_file, "rb") as f:
+        data = f.read()
+
+    b64 = base64.b64encode(data).decode()
+
+    md = f"""
+    <audio autoplay loop>
+    <source src="data:audio/mp3;base64,{b64}" type="audio/mp3">
+    </audio>
+    """
+
+    st.markdown(
+        md,
+        unsafe_allow_html=True
+    )
 
     st.markdown(
         page_bg_img,
