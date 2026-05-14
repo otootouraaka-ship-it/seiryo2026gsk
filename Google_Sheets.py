@@ -10,11 +10,9 @@ def access_sheets():
         "https://www.googleapis.com/auth/spreadsheets"
     ]
 
-    
-
-    creds_dict = json.loads(
-        st.secrets["gcp_service_account"]
-    )
+    creds_dict = st.secrets[
+        "gcp_service_account"
+    ]
 
     creds = Credentials.from_service_account_info(
         creds_dict,
