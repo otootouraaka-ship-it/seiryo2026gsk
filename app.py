@@ -108,7 +108,8 @@ def page5():
 # Navigation
 # =====================================
 
-pg = st.navigation([
+pages = [
+
     st.Page(
         page1,
         title="ホーム"
@@ -133,6 +134,10 @@ pg = st.navigation([
         page5,
         title="おまけ"
     )
-])
+]
+
+st.write(pages)
+
+pg = st.navigation(pages)
 
 pg.run()
