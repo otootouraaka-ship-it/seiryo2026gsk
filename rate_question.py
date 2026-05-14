@@ -80,14 +80,14 @@ def question_analysis_page(QUESTIONS, df):
 
         fig, ax = plt.subplots()
 
-        fig.patch.set_alpha(0)
+        fig.patch.set_alpha(0.7)
 
-        ax.set_facecolor((0,0,0,0))
+        ax.set_facecolor((1,1,1,0.5))
 
         bars = ax.bar(
             analysis_df["Choice"],
             analysis_df["Percentage"],
-            alpha=0.3
+            alpha=1
         )
 
         ax.set_ylim(0, 100)
