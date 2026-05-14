@@ -1,6 +1,7 @@
 import streamlit as st
 import matplotlib.pyplot as plt
 import pandas as pd
+import numpy as np
 
 def whole_analysis_page(df, mean_score, std_score, max_score, accuracy, ANSWER_KEY):
 
@@ -56,6 +57,8 @@ def whole_analysis_page(df, mean_score, std_score, max_score, accuracy, ANSWER_K
             alpha=1
             
         )
+
+        ax.set_xticks(np.arange(0, 100, 1))
 
         st.pyplot(fig)
 
