@@ -57,9 +57,6 @@ def whole_analysis_page(df, mean_score, std_score, max_score, accuracy, ANSWER_K
             
         )
 
-        plt.xlabel(color ="white")
-        plt.ylabel(color ="white")
-
         st.pyplot(fig)
 
     # =====================
