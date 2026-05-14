@@ -127,6 +127,7 @@ pg = st.navigation([
         page4,
         title="ランキング"
     ),
+    
     st.Page(
         page5,
         title="おまけ"
