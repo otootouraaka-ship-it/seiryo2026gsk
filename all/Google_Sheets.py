@@ -5,7 +5,7 @@ import gspread
 
 from google.oauth2.service_account import Credentials
 
-def access_sheets():
+def access_sheets(SHEET_URL):
     SCOPES = [
         "https://www.googleapis.com/auth/spreadsheets"
     ]
@@ -17,7 +17,7 @@ def access_sheets():
 
     client = gspread.authorize(creds)
 
-    SHEET_URL = "https://docs.google.com/spreadsheets/d/1tAHJJx2lAC0MFWzAMdkcd70RUBgCdn21zOAWhYs3rGo/edit?resourcekey=&gid=796447487#gid=796447487"
+    # SHEET_URL = "https://docs.google.com/spreadsheets/d/1tAHJJx2lAC0MFWzAMdkcd70RUBgCdn21zOAWhYs3rGo/edit?resourcekey=&gid=796447487#gid=796447487"
 
     sheet = client.open_by_url(
         SHEET_URL
