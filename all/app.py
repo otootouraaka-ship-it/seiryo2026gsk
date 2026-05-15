@@ -6,20 +6,20 @@ import streamlit as st
 
 from streamlit_autorefresh import st_autorefresh
 
-from setting2 import setting
-from Google_Sheets2 import access_sheets
-from calc2 import make_data
-from main2 import main_page
-from rate_question2 import question_analysis_page
-from whole_analysis2 import whole_analysis_page
-from ranking2 import ranking_page
+from setting import setting
+from Google_Sheets import access_sheets
+from calc import make_data
+from main import main_page
+from rate_question import question_analysis_page
+from whole_analysis import whole_analysis_page
+from ranking import ranking_page
 
 # =====================================
 # ページのコンフィグ設定
 # =====================================
 
 st.set_page_config(
-    page_title="げんしけんオールジャンル共通テスト2026 in 清陵祭", # リンク先として表示される名前
+    page_title="げんしけんにじさんじ共通テスト2026 in 清陵祭", # リンク先として表示される名前
     layout="wide", # 画面いっぱいにサイト内容を表示する
     initial_sidebar_state="expanded" # サイドバーを拡張して表示する
 )
@@ -43,13 +43,13 @@ setting("image2.png", "Morning_2.mp3") # サイトの背景とかフォントと
 # Google Sheets
 # =====================================
 
-df = access_sheets() # Google APIを用いてGoogle Spreadsheetのデータを持ってきている
+df = access_sheets("https://docs.google.com/spreadsheets/d/1tAHJJx2lAC0MFWzAMdkcd70RUBgCdn21zOAWhYs3rGo/edit?resourcekey=&gid=796447487#gid=796447487") # Google APIを用いてGoogle Spreadsheetのデータを持ってきている
 
 # =====================================
 # 問題設定
 # =====================================
 
-with open('answer2.json', 'r', encoding='utf-8') as f:
+with open('answer.json', 'r', encoding='utf-8') as f:
     ANSWER_KEY = json.load(f)
 
 QUESTIONS = list(
