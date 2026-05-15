@@ -49,7 +49,7 @@ df = access_sheets("https://docs.google.com/spreadsheets/d/1tAHJJx2lAC0MFWzAMdkc
 # 問題設定
 # =====================================
 
-with open('answer.json', 'r', encoding='utf-8') as f:
+with open('answer2.json', 'r', encoding='utf-8') as f:
     ANSWER_KEY = json.load(f)
 
 QUESTIONS = list(
