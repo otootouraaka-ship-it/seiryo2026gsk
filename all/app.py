@@ -13,7 +13,6 @@ from main import main_page
 from rate_question import question_analysis_page
 from whole_analysis import whole_analysis_page
 from ranking import ranking_page
-from omakepage import omake_page
 
 # =====================================
 # ページのコンフィグ設定
@@ -96,14 +95,6 @@ def ranking():
     ranking_page(df)
 
 # =====================================
-# ページ5
-# =====================================
-
-def omake():
-
-    omake_page()
-
-# =====================================
 # Navigation
 # =====================================
 
@@ -127,11 +118,6 @@ pages = [
     st.Page(
         ranking,
         title="ランキング"
-    ),
-
-    st.Page(
-        omake,
-        title="おまけ"
     )
 ]
 
